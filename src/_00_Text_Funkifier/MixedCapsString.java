@@ -3,29 +3,30 @@ public class MixedCapsString extends SpecialString {
 
 	public MixedCapsString(String s) {
 		super(s);
+
+	}
+	@Override
+	public String funkifyText(String s) {
 String newString = "";
 		
 		
-		for (int i = 0; i < newString.length() - 1; i++) {
+		for (int i = 0; i < s.length(); i++) {
 			System.out.println(newString);
-			if (newString.charAt(i) == 'h' || newString.charAt(i) == 's' || newString.charAt(i) == 'i'
-					|| newString.charAt(i) == 'l' || newString.charAt(i) == 'o' || newString.charAt(i) == 'a'
-					|| newString.charAt(i) == 't') {
+			if (i%2 == 1) {
+				
 
 				newString+= Character.toUpperCase(s.charAt(i));
 			}
 			else {
-				newString+= s.charAt(i);
+				newString+= Character.toLowerCase(s.charAt(i));
 			}
 
 		}
+		
 		this.s = newString;
-		System.out.println(s);
-	}
-
-	@Override
-	public String funkifyText(String s) {
-
-		return "";
+		System.out.println(this.s);
+		System.out.println(newString);
+	
+		return newString;
 	}
 }
